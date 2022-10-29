@@ -1,0 +1,9 @@
+type Task {
+  id: ID!
+  name: String!
+  status: String!
+}
+
+type Query {
+  getTask(id: ID!, status: String!): Task
+}
