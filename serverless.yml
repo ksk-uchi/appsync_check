@@ -63,7 +63,6 @@ package:
    - '!package-lock.json'
    - '!package.json'
 
-	
 custom:
   pythonRequirements:
     zip: true
@@ -82,6 +81,16 @@ custom:
         response: false
         dataSource: helloLambda
         field: getTask
+      - type: Mutation
+        request: false
+        response: false
+        dataSource: helloLambda
+        field: createTask
+      - type: Subscription
+        request: false
+        response: false
+        field: subscribeTask
+        dataSource: helloLambda
 
 functions:
   hello:

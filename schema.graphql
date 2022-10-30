@@ -7,3 +7,11 @@ type Task {
 type Query {
   getTask(id: ID!, status: String!): Task
 }
+
+type Mutation {
+  createTask(id: String, name: String!, status: String!): Task
+}
+
+type Subscription {
+  subscribeTask(id: String!): Task @aws_subscribe(mutations: ["createTask"])
+}
