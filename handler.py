@@ -13,8 +13,8 @@ def _for_subscription(event, context):
     # raise Exception("you are not customer.")
 
 
-def _switcher(event, key, dummy):
-    return dummy if key not in event["arguments"] else event["arguments"][key]
+def _switcher(event, key, dummy=""):
+    return event["arguments"].get(key, dummy)
 
 
 def hello(event, context):
